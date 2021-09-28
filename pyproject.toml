@@ -37,7 +37,7 @@ modern-python-boilerplate = 'modern_python_boilerplate.cli:main'
 [tool.poetry.dependencies]
 python = "<3.10,>=3.6.1"
 
-click = "^7.1.2"
+click = "^8.0.1"
 
 
 [tool.poetry.dev-dependencies]
