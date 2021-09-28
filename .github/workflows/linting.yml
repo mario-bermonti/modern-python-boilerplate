@@ -1,0 +1,31 @@
+
+name: Linting
+on: [push, pull_request]
+jobs:
+  linting:
+    name: Linting
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.3.4
+
+      - name: Set up Python 3.6
+        uses: actions/setup-python@v2.2.1
+        with:
+          python-version: 3.6
+
+      - name: Install system deps
+        shell: bash
+        run: |
+          pip install nox
+          pip install poetry
+          poetry config virtualenvs.in-project true
+
+      - name: Run mypy with nox
+        shell: bash
+        run: nox --force-color -s mypy
+
+      - name: Run pre-commit hooks
+        run: |
+          pip install pre-commit
+          pre-commit run --all-files
+
