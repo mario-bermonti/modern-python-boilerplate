@@ -20,4 +20,3 @@ jobs:
 # Credits
 # This workflow is taken almost entirely from TezRomacH
 # https://github.com/TezRomacH/python-package-template/blob/master/%7B%7B%20cookiecutter.project_name%20%7D%7D/.github/workflows/release-drafter.yml
-
