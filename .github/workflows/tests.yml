@@ -21,8 +21,7 @@ jobs:
       - name: Install system deps
         shell: bash
         run: |
-          pip install nox
-          pip install poetry
+          pip install --constraint=.github/workflows/constraints.txt nox poetry poetry-core
           poetry config virtualenvs.in-project true
 
       - name: Run tests with nox
